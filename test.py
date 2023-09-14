@@ -8,10 +8,6 @@ import json,sys,time
 #注册后一定要再点代表xxx授予管理员同意,否则outlook api无法调用
 
 
-
-
-
-
 path=sys.path[0]+r'/Secret.txt'
 num1 = 0
 
@@ -22,7 +18,7 @@ def gettoken(refresh_token):
           'refresh_token': refresh_token,
           'client_id':id,
           'client_secret':secret,
-          'redirect_uri':'http://localhost:53682/'
+           'redirect_uri':'http://localhost:53682/'
          }
     html = req.post('https://login.microsoftonline.com/common/oauth2/v2.0/token',data=data,headers=headers)
     jsontxt = json.loads(html.text)
